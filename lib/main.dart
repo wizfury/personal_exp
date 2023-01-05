@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_exp/transaction.dart';
+import 'package:intl/intl.dart';
 
 void main() => runApp(MyApp());
 
@@ -65,7 +66,7 @@ class Homepage extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
-                            Text(tx.date.toString())
+                            Text(DateFormat().format(tx.date))
                           ],
                         ),
                       )
