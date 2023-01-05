@@ -51,7 +51,7 @@ class Homepage extends StatelessWidget {
                             border: Border.all(width: 3, color: Colors.purple)),
                         padding: EdgeInsets.all(10),
                         margin: EdgeInsets.all(10),
-                        child: Text(tx.amt.toString(),
+                        child: Text('\$ ${tx.amt}',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.purple)),
