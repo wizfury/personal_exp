@@ -27,6 +27,9 @@ class Homepage extends StatelessWidget {
       Transaction(id: 't2', title: 'Watches', amt: 19.99, date: DateTime.now())
     ];
 
+    String titleinput;
+    String amtinput;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Personal exp"),
@@ -41,6 +44,25 @@ class Homepage extends StatelessWidget {
                   margin: EdgeInsets.all(10),
                   child: Text("Chart")),
               color: Colors.amber,
+            ),
+            Card(
+              elevation: 5,
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      TextField(
+                          decoration: InputDecoration(labelText: 'Title')),
+                      TextField(
+                        decoration: InputDecoration(labelText: 'Amount'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text("Add transaction"),
+                      )
+                    ]),
+              ),
             ),
             Column(
               children: transactions.map((tx) {
@@ -66,7 +88,7 @@ class Homepage extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
-                            Text(DateFormat().format(tx.date))
+                            Text(DateFormat().add_MMMMEEEEd().format(tx.date))
                           ],
                         ),
                       )
