@@ -23,7 +23,7 @@ class Homepage extends StatelessWidget {
     final List<Transaction> transactions = [
       Transaction(
           id: 't1', title: 'New shoes', amt: 99.99, date: DateTime.now()),
-      Transaction(id: 't2', title: 'watches', amt: 19.99, date: DateTime.now())
+      Transaction(id: 't2', title: 'Watches', amt: 19.99, date: DateTime.now())
     ];
 
     return Scaffold(
@@ -44,7 +44,33 @@ class Homepage extends StatelessWidget {
             Column(
               children: transactions.map((tx) {
                 return Card(
-                  child: Text(tx.title),
+                  child: Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(width: 3, color: Colors.purple)),
+                        padding: EdgeInsets.all(10),
+                        margin: EdgeInsets.all(10),
+                        child: Text(tx.amt.toString(),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.purple)),
+                      ),
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              tx.title,
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            Text(tx.date.toString())
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 );
               }).toList(),
             )
