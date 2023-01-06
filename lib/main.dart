@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:personal_exp/transaction.dart';
+import 'package:personal_exp/models/transaction.dart';
 import 'package:intl/intl.dart';
-
+import 'models/transaction.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -22,9 +22,7 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Transaction> transactions = [
-      Transaction(
-          id: 't1', title: 'New shoes', amt: 99.99, date: DateTime.now()),
-      Transaction(id: 't2', title: 'Watches', amt: 19.99, date: DateTime.now())
+      
     ];
 
     // String titleinput='';
