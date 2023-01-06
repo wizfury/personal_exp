@@ -27,8 +27,11 @@ class Homepage extends StatelessWidget {
       Transaction(id: 't2', title: 'Watches', amt: 19.99, date: DateTime.now())
     ];
 
-    String titleinput;
-    String amtinput;
+    // String titleinput='';
+    // String amtinput='';
+
+    final titlecontroller = TextEditingController();
+    final amtcontroller = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -53,12 +56,22 @@ class Homepage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       TextField(
-                          decoration: InputDecoration(labelText: 'Title')),
+                        decoration: InputDecoration(labelText: 'Title'),
+                        controller: titlecontroller,
+                        // onChanged: (val) {
+                        //   // titleinput = val;
+                        // },
+                      ),
                       TextField(
                         decoration: InputDecoration(labelText: 'Amount'),
+                        // onChanged: ((value) => amtinput = value),
+                        controller: amtcontroller,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          print(titlecontroller.text);
+                          print(amtcontroller.text);
+                        },
                         child: Text("Add transaction"),
                       )
                     ]),
