@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:personal_exp/models/transaction.dart';
 import 'package:intl/intl.dart';
+import 'package:personal_exp/widgets/new_transaction.dart';
+import 'package:personal_exp/widgets/transaction_list.dart';
 import 'models/transaction.dart';
 void main() => runApp(MyApp());
 
@@ -46,68 +48,8 @@ class Homepage extends StatelessWidget {
                   child: Text("Chart")),
               color: Colors.amber,
             ),
-            Card(
-              elevation: 5,
-              child: Container(
-                padding: EdgeInsets.all(10),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      TextField(
-                        decoration: InputDecoration(labelText: 'Title'),
-                        controller: titlecontroller,
-                        // onChanged: (val) {
-                        //   // titleinput = val;
-                        // },
-                      ),
-                      TextField(
-                        decoration: InputDecoration(labelText: 'Amount'),
-                        // onChanged: ((value) => amtinput = value),
-                        controller: amtcontroller,
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          print(titlecontroller.text);
-                          print(amtcontroller.text);
-                        },
-                        child: Text("Add transaction"),
-                      )
-                    ]),
-              ),
-            ),
-            Column(
-              children: transactions.map((tx) {
-                return Card(
-                  child: Row(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(width: 3, color: Colors.purple)),
-                        padding: EdgeInsets.all(10),
-                        margin: EdgeInsets.all(10),
-                        child: Text('\$ ${tx.amt}',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.purple)),
-                      ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              tx.title,
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
-                            ),
-                            Text(DateFormat().add_MMMMEEEEd().format(tx.date))
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                );
-              }).toList(),
-            )
+            NewTransaction(),
+            TransactionList(),
           ]),
     );
   }
