@@ -16,13 +16,11 @@ class NewTransaction extends StatelessWidget {
           TextField(
             decoration: InputDecoration(labelText: 'Title'),
             controller: titlecontroller,
-            // onChanged: (val) {
-            //   // titleinput = val;
-            // },
+            
           ),
           TextField(
             decoration: InputDecoration(labelText: 'Amount'),
-            // onChanged: ((value) => amtinput = value),
+            
             controller: amtcontroller,
           ),
           ElevatedButton(
