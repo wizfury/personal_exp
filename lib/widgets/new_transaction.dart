@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 
 class NewTransaction extends StatelessWidget {
-  const NewTransaction({super.key});
+  NewTransaction(this.addTx);
+  final Function addTx;
+  final titlecontroller = TextEditingController();
+  final amtcontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-
-
-    final titlecontroller = TextEditingController();
-    final amtcontroller = TextEditingController();
-
-
     return Card(
       elevation: 5,
       child: Container(
@@ -30,8 +27,7 @@ class NewTransaction extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              print(titlecontroller.text);
-              print(amtcontroller.text);
+              addTx(titlecontroller.text,double.parse(amtcontroller.text));
             },
             child: Text("Add transaction"),
           )
