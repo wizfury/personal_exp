@@ -3,6 +3,7 @@ import 'package:personal_exp/models/transaction.dart';
 import 'package:intl/intl.dart';
 import 'package:personal_exp/widgets/new_transaction.dart';
 import 'package:personal_exp/widgets/transaction_list.dart';
+import 'package:personal_exp/widgets/user_transaction.dart';
 import 'models/transaction.dart';
 void main() => runApp(MyApp());
 
@@ -48,8 +49,7 @@ class Homepage extends StatelessWidget {
                   child: Text("Chart")),
               color: Colors.amber,
             ),
-            NewTransaction(),
-            TransactionList(),
+            UserTransaction(),
           ]),
     );
   }
