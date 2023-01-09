@@ -38,19 +38,21 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Personal exp"),
       ),
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Card(
-              child: Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.all(10),
-                  child: Text("Chart")),
-              color: Colors.amber,
-            ),
-            UserTransaction(),
-          ]),
+      body: SingleChildScrollView(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Card(
+                child: Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.all(10),
+                    child: Text("Chart")),
+                color: Colors.amber,
+              ),
+              UserTransaction(),
+            ]),
+      ),
     );
   }
 }
